@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Participation List</h2>
+<ul>
+  {% for participation in participations %}
+  <li><a href="{% url 'participation_detail' participation_id=participation.id %}">Participation {{ forloop.counter }}</a></li>
+  {% empty %}
+  <li>No participations found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

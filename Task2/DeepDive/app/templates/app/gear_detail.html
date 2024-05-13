@@ -1,0 +1,9 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Gear Detail</h2>
+<h3>{{ gear.gear_name }}</h3>
+<p>Type: {{ gear.gear_type }}</p>
+<p>Size: {{ gear.size }}</p>
+<p>Organizer: {{ gear.organizer.organizer_name }}</p>
+<a href="{% url 'gear_update' gear_id=gear.id %}">Update</a>
+{% endblock %}

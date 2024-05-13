@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Activity Detail</h2>
+<h3>{{ activity.activity_name }}</h3>
+<p>Country: {{ activity.country }}</p>
+<p>Description: {{ activity.description }}</p>
+<p>Places: {{ activity.places }}</p>
+<p>Date & Time: {{ activity.activity_date_time }}</p>
+<p>Organizer: {{ activity.organizer.organizer_name }}</p>
+<a href="{% url 'activity_update' activity_id=activity.id %}">Update</a>
+{% endblock %}

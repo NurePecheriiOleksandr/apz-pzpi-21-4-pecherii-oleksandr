@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Dive Computer List</h2>
+<ul>
+  {% for dive_computer in dive_computers %}
+  <li><a href="{% url 'dive_computer_detail' dive_computer_id=dive_computer.id %}">Dive Computer {{ forloop.counter }}</a></li>
+  {% empty %}
+  <li>No dive computers found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

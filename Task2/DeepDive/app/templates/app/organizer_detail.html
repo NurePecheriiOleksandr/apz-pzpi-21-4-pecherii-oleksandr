@@ -1,0 +1,7 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Organizer Detail</h2>
+<h3>{{ organizer.organizer_name }}</h3>
+<p>Organizer Type: {{ organizer.organizer_type }}</p>
+<a href="{% url 'organizer_update' organizer_id=organizer.id %}">Update</a>
+{% endblock %}

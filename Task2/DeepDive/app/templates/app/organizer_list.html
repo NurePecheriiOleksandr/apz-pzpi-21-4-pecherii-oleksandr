@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Organizer List</h2>
+<ul>
+  {% for organizer in organizers %}
+  <li><a href="{% url 'organizer_detail' organizer_id=organizer.id %}">{{ organizer.organizer_name }}</a></li>
+  {% empty %}
+  <li>No organizers found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

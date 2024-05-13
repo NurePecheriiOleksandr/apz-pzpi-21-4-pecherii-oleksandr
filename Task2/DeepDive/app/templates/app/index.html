@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Welcome to the Main Page</h1>
+    {% if user_email %}
+        <p>User Email: {{ user_email }}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> to see your email.</p>
+    {% endif %}
+    <ul>
+        <li><a href="{% url 'organizer_list' %}">Organizer List</a></li>
+        <li><a href="{% url 'organizer_create' %}">Create Organizer</a></li>
+        <!-- Links for other models -->
+        <li><a href="{% url 'gear_list' %}">Gear List</a></li>
+        <li><a href="{% url 'gear_create' %}">Create Gear</a></li>
+        <li><a href="{% url 'dive_computer_list' %}">Dive Computer List</a></li>
+        <li><a href="{% url 'dive_computer_create' %}">Create Dive Computer</a></li>
+        <li><a href="{% url 'activity_list' %}">Activity List</a></li>
+        <li><a href="{% url 'activity_create' %}">Create Activity</a></li>
+        <li><a href="{% url 'participation_list' %}">Participation List</a></li>
+        <li><a href="{% url 'participation_create' %}">Create Participation</a></li>
+    </ul>
+</body>
+</html>

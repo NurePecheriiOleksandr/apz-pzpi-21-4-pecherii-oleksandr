@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Gear List</h2>
+<ul>
+  {% for gear in gears %}
+  <li><a href="{% url 'gear_detail' gear_id=gear.id %}">{{ gear.gear_name }}</a></li>
+  {% empty %}
+  <li>No gears found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Dive Computer Detail</h2>
+<p>Depth: {{ dive_computer.depth }}</p>
+<p>Dive Time: {{ dive_computer.dive_time }}</p>
+<a href="{% url 'dive_computer_update' dive_computer_id=dive_computer.id %}">Update</a>
+{% endblock %}

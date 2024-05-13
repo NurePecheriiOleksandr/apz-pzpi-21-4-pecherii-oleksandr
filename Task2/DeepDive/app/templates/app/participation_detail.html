@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Participation Detail</h2>
+<p>Group: {{ participation.group }}</p>
+<p>User: {{ participation.user.username }}</p>
+<p>Dive Computer: {{ participation.dive_computer }}</p>
+<p>Activity: {{ participation.activity.activity_name }}</p>
+<p>Gear: {{ participation.gear.gear_name }}</p>
+<a href="{% url 'participation_update' participation_id=participation.id %}">Update</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Activity List</h2>
+<ul>
+  {% for activity in activities %}
+  <li><a href="{% url 'activity_detail' activity_id=activity.id %}">{{ activity.activity_name }}</a></li>
+  {% empty %}
+  <li>No activities found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
