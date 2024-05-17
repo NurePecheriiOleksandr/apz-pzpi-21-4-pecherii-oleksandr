@@ -1,7 +1,3 @@
-"""
-Definition of urls for DeepDive.
-"""
-
 from datetime import datetime
 from django.urls import path
 from django.contrib import admin
@@ -16,6 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
+    path('backup/', views.backup_database_view, name='backup_database'),
     
         #Organizers URLs
     path('organizers/', views.organizer_list, name='organizer_list'),
@@ -44,6 +41,8 @@ urlpatterns = [
     path('activities/create/', views.activity_create, name='activity_create'),
     path('activities/<int:activity_id>/update/', views.activity_update, name='activity_update'),
     path('activities/<int:activity_id>/delete/', views.activity_delete, name='activity_delete'),
+    path('activity/<int:activity_id>/distribute-gear/', views.gear_distribution, name='gear_distribution'),
+    path('activity/<int:activity_id>/free-gear/', views.free_gear_for_activity, name='free_gear_for_activity'),
 
     # Participation URLs
     path('participations/', views.participation_list, name='participation_list'),
