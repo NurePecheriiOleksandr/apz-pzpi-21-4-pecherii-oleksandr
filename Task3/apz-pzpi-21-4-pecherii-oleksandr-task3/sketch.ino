@@ -9,9 +9,10 @@ const char* dive_computer_id = "1";
 
 HX711 scale;
 
-const float atmosphericPressure = 101325;
-const float waterDensity = 1025;
-const float gravity = 9.81;
+// Константи для розрахунків глибини
+const float atmosphericPressure = 101325; // Атмосферний тиск в Па
+const float waterDensity = 1025; // Щільність води в кг/м^3
+const float gravity = 9.81; // Прискорення вільного падіння в м/с^2
 
 unsigned long diveStartTime;
 bool isDiving = false;
@@ -39,7 +40,8 @@ void loop() {
   float rawReading = scale.get_units(5);
 
   rawReading = max(rawReading, 0.0f);
-
+  
+ // Обчислення тиску та глибини
   float pressure = rawReading * 1000 + atmosphericPressure;
   float depth = (pressure - atmosphericPressure) / (waterDensity * gravity);
 
