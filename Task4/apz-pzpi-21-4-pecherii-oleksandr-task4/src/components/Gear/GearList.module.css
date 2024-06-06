@@ -1,31 +1,31 @@
 .gearListContainer {
     position: relative;
     padding: 20px;
-    background-color: #ACE2E1; /* Set background color for the container */
+    background-color: #ACE2E1; 
     height: 740px;
   }
   
   h1, h2 {
     color: #008DDA;
-    margin-bottom: 10px; /* Reduce the distance between the navbar and title */
+    margin-bottom: 10px; 
   }
   
   .organizerContainer {
-    background-color: #41C9E2; /* Change organizer container color */
+    background-color: #41C9E2; 
     border: 1px solid #008DDA;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
-    text-align: center; /* Center text inside the organizer container */
+    text-align: center; 
   }
   
   .gearList {
     list-style-type: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Make containers go right after another */
-    gap: 10px; /* Add space between items */
-    justify-content: center; /* Center gear items */
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
   }
   
   .gearItem {
@@ -38,8 +38,8 @@
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    width: calc(33.33% - 20px); /* Adjust width for 3 columns */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    width: calc(33.33% - 20px); 
+    box-sizing: border-box; 
     text-align: center;
   }
   
