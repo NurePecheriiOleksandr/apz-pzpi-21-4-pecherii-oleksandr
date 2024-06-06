@@ -3,10 +3,10 @@ import axiosInstance from '../../api/axiosInstance';
 import { Link, useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import styles from './ActivityList.module.css';
- // Import default styles for the calendar
+
 
 const ActivityList = () => {
-    const [activities, setActivities] = useState([]); // Ensure this is an array
+    const [activities, setActivities] = useState([]); 
     const [date, setDate] = useState(new Date());
     const navigate = useNavigate();
 
@@ -14,8 +14,8 @@ const ActivityList = () => {
         const fetchActivities = async () => {
             try {
                 const response = await axiosInstance.get('/api/activities/');
-                console.log('Response data:', response.data); // Log the response data
-                setActivities(response.data); // Ensure response.data is an array
+                console.log('Response data:', response.data); 
+                setActivities(response.data); 
             } catch (error) {
                 console.error('Failed to fetch activities', error);
             }
