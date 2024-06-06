@@ -1,6 +1,6 @@
 .formContainer {
     padding: 20px;
-    background-color: #ACE2E1; /* Set background color for the container */
+    background-color: #ACE2E1; 
     min-height: 100vh;
   }
   
@@ -12,7 +12,7 @@
   .formGroup {
     margin-bottom: 15px;
     width: 100%;
-    max-width: 400px; /* Limit the width of form fields */
+    max-width: 400px; 
   }
   
   label {
@@ -42,7 +42,7 @@
     border-radius: 20px;
     font-size: 16px;
     margin-top: 20px;
-    max-width: 200px; /* Limit the width of buttons */
+    max-width: 200px; 
   }
   
   button:hover {
