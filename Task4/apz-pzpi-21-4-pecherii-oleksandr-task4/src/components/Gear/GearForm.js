@@ -5,9 +5,9 @@ import { useUser } from '../Shared/UserContext';
 import styles from '../Shared/Form.module.css';
 
 const GearForm = () => {
-  const { id, gearId } = useParams(); // Get the organizer ID and gear ID from the URL
+  const { id, gearId } = useParams(); 
   const navigate = useNavigate();
-  const { user } = useUser(); // Get the current user from the context
+  const { user } = useUser(); 
 
   const [gear, setGear] = useState({
     gear_name: '',
@@ -15,19 +15,19 @@ const GearForm = () => {
     size: '',
     is_reserved: false,
     wetsuit_size: '',
-    organizer: id  // Initialize with the organizer ID
+    organizer: id  
   });
 
   const [isUpdate, setIsUpdate] = useState(false);
 
   useEffect(() => {
     if (gearId) {
-      // If there is a gear ID in the URL, we are updating an existing gear
+     
       setIsUpdate(true);
       axiosInstance.get(`http://localhost:8000/api/gears/${gearId}/`)
         .then(response => {
           const gearData = response.data;
-          // Ensure the organizer ID is included
+          
           gearData.organizer = gearData.organizer?.id || id;
           setGear(gearData);
         })
@@ -49,9 +49,9 @@ const GearForm = () => {
     e.preventDefault();
     const gearData = {
       ...gear,
-      organizer: gear.organizer?.id || gear.organizer || id // Ensure the organizer ID is included
+      organizer: gear.organizer?.id || gear.organizer || id 
     };
-    console.log('Submitting gear data:', gearData); // Log the data
+    console.log('Submitting gear data:', gearData); 
 
     if (isUpdate) {
       axiosInstance.put(`http://localhost:8000/api/gears/${gearId}/`, gearData)
