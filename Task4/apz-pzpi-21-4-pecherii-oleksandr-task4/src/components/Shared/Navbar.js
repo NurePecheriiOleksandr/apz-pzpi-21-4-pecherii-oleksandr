@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from './UserContext';
-import axiosInstance from '../../api/axiosInstance'; // Import axiosInstance for logout request
+import axiosInstance from '../../api/axiosInstance'; 
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-  const { user, logout } = useUser(); // Include logout from context
+  const { user, logout } = useUser(); 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await axiosInstance.post('/api/logout/'); // Make the logout request to the server
-      logout(); // Update context to remove user
-      navigate('/login'); // Redirect to login page
+      await axiosInstance.post('/api/logout/'); 
+      logout();
+      navigate('/login'); 
     } catch (error) {
       console.error('Logout error:', error.response ? error.response.data : error.message);
     }
