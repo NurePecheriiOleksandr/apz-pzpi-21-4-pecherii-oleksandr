@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../Shared/UserContext';
-import axiosInstance from '../../api/axiosInstance';  // Use the axios instance with interceptors
+import axiosInstance from '../../api/axiosInstance';  
 import styles from './GearList.module.css';
 
 function GearList() {
-  const { user } = useUser();  // Access the user from context
+  const { user } = useUser();  
   const [gears, setGears] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('User context in useEffect:', user); // Debug log
+    console.log('User context in useEffect:', user); 
     if (user) {
-      console.log('User is available:', user);  // Debug log
+      console.log('User is available:', user);  
 
       axiosInstance.get('/api/gears/')
         .then(response => {
           setGears(response.data);
-          console.log('Gears:', response.data);  // Debug log
+          console.log('Gears:', response.data); 
         })
         .catch(error => console.error('Fetch error:', error));
     } else {
-      console.log('User is not available');  // Debug log
+      console.log('User is not available');  
     }
   }, [user]);
 
@@ -29,7 +29,7 @@ function GearList() {
     navigate(`/gears/${gearId}/details`);
   };
 
-  // Group gears by organizer
+  
   const gearsByOrganizer = gears.reduce((acc, gear) => {
     const organizerName = gear.organizer?.organizer_name || 'Unknown Organizer';
     if (!acc[organizerName]) {
