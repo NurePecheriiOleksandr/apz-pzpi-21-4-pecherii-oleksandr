@@ -1,27 +1,27 @@
 .organizerListContainer {
   position: relative;
   padding: 20px;
-  background-color: #ACE2E1; /* Set background color for the container */
+  background-color: #ACE2E1; 
   height: 740px;
 }
 
 h1 {
   color: #008DDA;
-  margin-top: 10px; /* Reduce the distance between the navbar and title */
+  margin-top: 10px; 
 }
 
 .addOrganizerButton {
   position: absolute;
-  top: 10px; /* Adjust to reduce distance from the navbar */
+  top: 10px; 
   right: 60px;
   background-color: #F7EEDD;
   border-color: #0000;
   padding: 10px;
   cursor: pointer;
-  border-radius: 0; /* Make it square */
+  border-radius: 0; 
   font-size: 16px;
   width: 250px;
-  color: #41C9E2; /* Change text color */
+  color: #41C9E2; 
 }
 
 .addOrganizerButton:hover {
@@ -49,8 +49,8 @@ h1 {
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Make containers go right after another */
-  gap: 10px; /* Add space between items */
+  flex-wrap: wrap; 
+  gap: 10px; 
 }
 
 .organizerItem {
@@ -63,8 +63,8 @@ h1 {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  width: calc(33.33% - 20px); /* Adjust width for 3 columns */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  width: calc(33.33% - 20px); 
+  box-sizing: border-box; 
 }
 
 .organizerInfo {
@@ -73,7 +73,7 @@ h1 {
 }
 
 .organizerInfo strong {
-  font-size: 18px; /* Make organizer name text a bit bigger */
+  font-size: 18px; 
 }
 
 button {
