@@ -37,7 +37,7 @@ function App() {
           <Route path="/gears/edit/:gearId" element={<GearForm />} />
           <Route path="/organizers/:id/add-gear" element={<GearForm />} />
           <Route path="/organizers/:id/edit-gear/:gearId" element={<GearForm />} />
-          <Route path="/admin" element={<AdminPage />} /> {/* Add AdminPage Route */}
+          <Route path="/admin" element={<AdminPage />} /> 
         </Routes>
       </Router>
     </UserProvider>
