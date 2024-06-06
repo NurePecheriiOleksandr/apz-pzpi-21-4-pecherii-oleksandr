@@ -5,9 +5,9 @@ import { useUser } from '../Shared/UserContext';
 import styles from '../Shared/Form.module.css';
 
 const OrganizerForm = () => {
-  const { id } = useParams(); // Get the organizer ID from the URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
-  const { user } = useUser(); // Get the current user from the context
+  const { user } = useUser(); 
 
   const [organizer, setOrganizer] = useState({
     organizer_name: '',
@@ -18,7 +18,7 @@ const OrganizerForm = () => {
 
   useEffect(() => {
     if (id) {
-      // If there is an ID in the URL, we are updating an existing organizer
+     
       setIsUpdate(true);
       axios.get(`http://localhost:8000/api/organizers/${id}/`)
         .then(response => {
