@@ -12,7 +12,7 @@ const ActivityForm = () => {
         description: '',
         places: '',
         activity_date_time: '',
-        organizer: organizerId,  // Initialize with organizerId from the URL
+        organizer: organizerId,  
     });
     const [isEditing, setIsEditing] = useState(false);
 
@@ -49,9 +49,9 @@ const ActivityForm = () => {
                 await axiosInstance.post('/api/activities/', { ...activity, organizer: organizerId });
             }
             if (organizerId) {
-                navigate(`/organizers/${organizerId}/details`);  // Redirect to organizer details after submission
+                navigate(`/organizers/${organizerId}/details`);  
             } else {
-                navigate('/');  // Redirect to homepage if organizerId is not defined
+                navigate('/');  
             }
         } catch (error) {
             console.error('Failed to save activity', error);
