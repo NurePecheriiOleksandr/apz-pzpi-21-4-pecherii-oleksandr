@@ -5,17 +5,17 @@ import { useUser } from '../Shared/UserContext';
 import styles from './OrganizerList.module.css';
 
 function OrganizerList() {
-  const { user } = useUser();  // Access the user from context
+  const { user } = useUser();  
   const [organizers, setOrganizers] = useState([]);
   const [userOrganizers, setUserOrganizers] = useState([]);
-  const [filter, setFilter] = useState('all'); // State for the filter
+  const [filter, setFilter] = useState('all'); 
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/organizers/')
       .then(response => {
         setOrganizers(response.data);
-        console.log('Organizers:', response.data);  // Debug log
+        console.log('Organizers:', response.data);  
       })
       .catch(error => console.error('Fetch error:', error));
 
@@ -23,7 +23,7 @@ function OrganizerList() {
       axios.get(`http://localhost:8000/api/user_organizers/${user.id}/`)
         .then(response => {
           setUserOrganizers(response.data);
-          console.log('UserOrganizers:', response.data);  // Debug log
+          console.log('UserOrganizers:', response.data);  
         })
         .catch(error => console.error('Fetch error:', error));
     }
@@ -51,7 +51,7 @@ function OrganizerList() {
 
   const filteredOrganizers = organizers.filter(organizer => {
     const organizerType = organizer.organizer_type.toLowerCase().trim();
-    console.log('Filtering:', organizerType, 'Filter:', filter); // Debug log
+    console.log('Filtering:', organizerType, 'Filter:', filter); 
     return filter === 'all' || organizerType === filter;
   });
 
