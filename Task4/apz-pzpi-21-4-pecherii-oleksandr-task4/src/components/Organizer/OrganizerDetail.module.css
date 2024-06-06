@@ -1,6 +1,6 @@
 .organizerDetailContainer {
     padding: 20px;
-    background-color: #ACE2E1; /* Set background color for the container */
+    background-color: #ACE2E1; 
     min-height: 100vh;
   }
   
@@ -13,7 +13,7 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Add space between items */
+    gap: 10px; 
   }
   
   .activityItem {
@@ -25,13 +25,13 @@
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    width: calc(33.33% - 20px); /* Adjust width for 3 columns */
+    width: calc(33.33% - 20px); 
     box-sizing: border-box;
     text-align: center;
   }
   
   .activityInfo strong {
-    font-size: 18px; /* Make activity name text a bit bigger */
+    font-size: 18px; 
   }
   
   .buttonContainer {
@@ -39,7 +39,7 @@
     top: 100px;
     right: 60px;
     display: flex;
-    gap: 10px; /* Add space between buttons */
+    gap: 10px; 
   }
   
   .buttonContainer button {
