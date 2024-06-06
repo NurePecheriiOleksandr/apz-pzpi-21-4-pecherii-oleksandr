@@ -43,7 +43,7 @@
   border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the button content */
+  justify-content: center; 
 }
 
 .navbarLink:hover, .logoutButton:hover {
